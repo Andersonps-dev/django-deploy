@@ -10,6 +10,6 @@ def listar_produtos(request):
         form = ProdutoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_produtos')
+            return redirect('listar_produtos')        
 
     return render(request, 'lista.html', {'produtos': produtos, 'form': form})
