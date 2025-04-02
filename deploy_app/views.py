@@ -13,14 +13,5 @@ class IndexView(TemplateView):
         context['produtos'] = Produto.objects.all()
         context['form'] = ProdutoForm()
         return context
-
-class ProdutoDeleteView(DeleteView):
-    model = Produto
-    success_url = reverse_lazy('index')
-    
-    def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        self.object.delete()
-        return HttpResponse(status=204)
     
        
